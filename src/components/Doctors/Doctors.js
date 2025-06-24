@@ -1,9 +1,10 @@
+// components/Doctors/Doctors.js
 import React from 'react';
 import './Doctors.css';
 import doctor1 from '../../assets/pexels-1222300-2324837.jpg';
-import doctor2 from '../../assets/pexels-1222300-2324837.jpg';
-import doctor3 from '../../assets/pexels-1222300-2324837.jpg';
-import { FaUserMd, FaStethoscope, FaHospital, FaHeartbeat, FaChild, FaFemale } from 'react-icons/fa';
+import doctor2 from '../../assets/pexels-pixabay-236380.jpg';
+import doctor3 from '../../assets/pexels-pixabay-236380.jpg';
+import { FaUserMd, FaStethoscope, FaHospital, FaHeartbeat } from 'react-icons/fa';
 
 const Doctors = () => {
   const doctors = [
@@ -11,22 +12,22 @@ const Doctors = () => {
       image: doctor1,
       name: 'Dr. Sarah Johnson',
       specialty: 'Cardiology',
-      bio: 'Board-certified cardiologist with 15 years of experience in heart care.',
+      experience: '15 years',
       icon: <FaHeartbeat />
     },
     {
       image: doctor2,
       name: 'Dr. Michael Chen',
       specialty: 'Pediatrics',
-      bio: 'Specializing in child healthcare with a compassionate approach.',
-      icon: <FaChild />
+      experience: '12 years',
+      icon: <FaStethoscope />
     },
     {
       image: doctor3,
       name: 'Dr. Priya Patel',
       specialty: 'Obstetrics & Gynecology',
-      bio: 'Expert in women\'s health with a focus on holistic care.',
-      icon: <FaFemale />
+      experience: '10 years',
+      icon: <FaHospital />
     }
   ];
 
@@ -34,7 +35,7 @@ const Doctors = () => {
     <section className="doctors-section">
       <div className="container">
         <h2 className="section-title">Our Dedicated Doctors</h2>
-        <p className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px' }}>
+        <p className="section-subtitle">
           Meet our team of experienced healthcare professionals dedicated to your wellbeing.
         </p>
         
@@ -45,8 +46,8 @@ const Doctors = () => {
                 <img src={doctor.image} alt={doctor.name} />
                 <div className="doctor-overlay">
                   <div className="overlay-content">
-                    <p>{doctor.bio}</p>
-                    <a href="/appointment" className="btn">Book Appointment</a>
+                    <p>{doctor.experience} of experience</p>
+                    <a href="/appointment" className="btn btn-teal">Book Appointment</a>
                   </div>
                 </div>
               </div>
@@ -61,8 +62,8 @@ const Doctors = () => {
           ))}
         </div>
         
-        <div className="text-center" style={{ marginTop: '50px' }}>
-          <a href="/doctors" className="btn btn-accent">View All Doctors</a>
+        <div className="text-center">
+          <a href="/doctors" className="btn btn-purple">View All Doctors</a>
         </div>
       </div>
     </section>

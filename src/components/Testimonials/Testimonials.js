@@ -1,9 +1,10 @@
+// components/Testimonials/Testimonials.js
 import React from 'react';
 import './Testimonials.css';
 import testimonial1 from '../../assets/pexels-pixabay-139398.jpg';
-import testimonial2 from '../../assets/pexels-pixabay-236380.jpg';
-import testimonial3 from '../../assets/pexels-pixabay-236380.jpg';
-import { FaQuoteLeft } from 'react-icons/fa';
+import testimonial2 from '../../assets/pexels-pixabay-139398.jpg';
+import testimonial3 from '../../assets/pexels-pixabay-40568.jpg';
+import { FaQuoteLeft, FaPlay } from 'react-icons/fa';
 
 const Testimonials = () => {
   const testimonials = [
@@ -31,31 +32,45 @@ const Testimonials = () => {
     <section className="testimonials-section">
       <div className="container">
         <h2 className="section-title">Patient Experiences</h2>
-        <p className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px' }}>
+        <p className="section-subtitle">
           Hear what our patients and partners say about their experiences with us.
         </p>
         
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div className="testimonial-card" key={index}>
-              <div className="quote-icon">
-                <FaQuoteLeft />
+        <div className="testimonials-content">
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial, index) => (
+              <div className="testimonial-card" key={index}>
+                <div className="quote-icon">
+                  <FaQuoteLeft />
+                </div>
+                <p className="quote">"{testimonial.quote}"</p>
+                <div className="testimonial-author">
+                  <img src={testimonial.image} alt={testimonial.name} className="author-image" />
+                  <div className="author-info">
+                    <h4>{testimonial.name}</h4>
+                    <p>{testimonial.role}</p>
+                  </div>
+                </div>
               </div>
-              <p className="quote">"{testimonial.quote}"</p>
-              <div className="testimonial-author">
-                <img src={testimonial.image} alt={testimonial.name} className="author-image" />
-                <div className="author-info">
-                  <h4>{testimonial.name}</h4>
-                  <p>{testimonial.role}</p>
+            ))}
+          </div>
+          
+          <div className="video-testimonials">
+            <h3>Video Testimonials</h3>
+            <div className="video-grid">
+              <div className="video-thumbnail">
+                <div className="play-overlay">
+                  <FaPlay />
+                </div>
+              </div>
+              <div className="video-thumbnail">
+                <div className="play-overlay">
+                  <FaPlay />
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-        
-        <div className="text-center" style={{ marginTop: '50px' }}>
-          <a href="/testimonials" className="btn">View More Testimonials</a>
-          <a href="/survey" className="btn btn-accent" style={{ marginLeft: '15px' }}>Share Your Experience</a>
+            <a href="/testimonials" className="btn btn-teal">View More Videos</a>
+          </div>
         </div>
       </div>
     </section>

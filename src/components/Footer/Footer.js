@@ -1,25 +1,27 @@
+// components/Footer/Footer.js
 import React from 'react';
 import './Footer.css';
-import logo from '../../assets/pexels-pixabay-236380.jpg';  /*logo*/
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaMapMarkerAlt, FaPhone ,FaEnvelope} from 'react-icons/fa';
+import logo from '../../assets/logo.jpg';
+import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
 
 const Footer = () => {
   const quickLinks = [
-    { title: 'Home', link: '/' },
     { title: 'About Us', link: '/about' },
     { title: 'Services', link: '/services' },
-    { title: 'Doctors', link: '/doctors' },
-    { title: 'Patient Guide', link: '/patient-guide' },
-    { title: 'Contact', link: '/contact' }
+    { title: 'Booking', link: '/booking' },
+    { title: "FAQ's", link: '/faq' },
+    { title: 'Blogs', link: '/blog' },
+    { title: 'Our Team', link: '/doctors' }
   ];
 
   const servicesLinks = [
-    { title: 'Emergency Care', link: '/emergency' },
-    { title: 'Pharmacy', link: '/pharmacy' },
-    { title: 'Labor Room', link: '/labor-room' },
-    { title: 'Laboratory', link: '/laboratory' },
-    { title: 'Radio Diagnostics', link: '/radio-diagnostics' },
-    { title: 'Health Packages', link: '/health-packages' }
+    { title: 'Dental Care', link: '/dental' },
+    { title: 'Cardiac Clinic', link: '/cardiac' },
+    { title: 'Massage Therapy', link: '/therapy' },
+    { title: 'Cardiology', link: '/cardiology' },
+    { title: 'Precise Diagnosis', link: '/diagnosis' },
+    { title: 'Ambulance Services', link: '/ambulance' }
   ];
 
   return (
@@ -29,21 +31,25 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="footer-col about-col">
               <div className="footer-logo">
-                <img src={logo} alt="SDAMC Logo" />
+                <img src={logo} alt="SDAMC" />
                 <div className="logo-text">
                   <h3>SDAMC</h3>
-                  <p>Faith-Based Healthcare</p>
                 </div>
               </div>
               <p className="footer-about">
                 The Center of Excellence in Faith-Based Healthcare, Education and Lifestyle.
               </p>
-              <div className="social-links">
-                <a href="/facebook"><FaFacebook /></a>
-                <a href="/twitter"><FaTwitter /></a>
-                <a href="/instagram"><FaInstagram /></a>
-                <a href="/linkedin"><FaLinkedin /></a>
-                <a href="/youtube"><FaYoutube /></a>
+              
+              <div className="contact-info">
+                <h4>Contact Us</h4>
+                <div className="contact-item">
+                  <FaPhone className="contact-icon" />
+                  <span>+01123 456 7890</span>
+                </div>
+                <div className="contact-item">
+                  <FaEnvelope className="contact-icon" />
+                  <span>info@sdamc.org</span>
+                </div>
               </div>
             </div>
             
@@ -51,7 +57,9 @@ const Footer = () => {
               <h4>Quick Links</h4>
               <ul>
                 {quickLinks.map((item, index) => (
-                  <li key={index}><a href={item.link}>{item.title}</a></li>
+                  <li key={index}>
+                    <a href={item.link}>{item.title}</a>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -60,33 +68,32 @@ const Footer = () => {
               <h4>Our Services</h4>
               <ul>
                 {servicesLinks.map((item, index) => (
-                  <li key={index}><a href={item.link}>{item.title}</a></li>
+                  <li key={index}>
+                    <a href={item.link}>{item.title}</a>
+                  </li>
                 ))}
               </ul>
             </div>
             
             <div className="footer-col">
-              <h4>Contact Info</h4>
-              <ul className="contact-info">
-                <li>
-                  <span className="contact-icon"><FaMapMarkerAlt /></span>
-                  <span>123 Healing Street, Healthville, HV 123456</span>
-                </li>
-                <li>
-                  <span className="contact-icon"><FaPhone /></span>
-                  <span>+91 1234567890</span>
-                </li>
-                <li>
-                  <span className="contact-icon"><FaEnvelope /></span>
-                  <span>info@sdamc.org</span>
-                </li>
-              </ul>
-              
-              <h4 style={{ marginTop: '20px' }}>Newsletter</h4>
+              <h4>Subscribe</h4>
+              <p>Stay updated with our latest news and health tips</p>
               <form className="newsletter-form">
-                <input type="email" placeholder="Your Email" required />
-                <button type="submit" className="btn">Subscribe</button>
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  required 
+                />
+                <button type="submit" className="btn btn-purple">
+                  Subscribe Now
+                </button>
               </form>
+              <div className="social-links">
+                <a href="/facebook"><FiFacebook /></a>
+                <a href="/twitter"><FiTwitter /></a>
+                <a href="/instagram"><FiInstagram /></a>
+                <a href="/linkedin"><FiLinkedin /></a>
+              </div>
             </div>
           </div>
         </div>
@@ -94,14 +101,7 @@ const Footer = () => {
       
       <div className="footer-bottom">
         <div className="container">
-          <div className="footer-bottom-content">
-            <p>&copy; {new Date().getFullYear()} SDAMC Hospital. All Rights Reserved.</p>
-            <div className="footer-links">
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms of Service</a>
-              <a href="/sitemap">Sitemap</a>
-            </div>
-          </div>
+          <p>&copy; {new Date().getFullYear()} SDAMC Hospital. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

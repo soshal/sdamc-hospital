@@ -91,3 +91,113 @@
   font-size: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* components/Doctors/Doctors.css */
+.doctors-section {
+  background: var(--light-gray);
+  padding: 8rem 0;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  color: var(--dark-gray);
+  font-size: 1.1rem;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.doctor-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.doctor-image {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+
+.doctor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.doctor-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 128, 128, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.doctor-card:hover .doctor-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  padding: 2rem;
+  color: var(--white);
+}
+
+.overlay-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.doctor-info {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.doctor-info h3 {
+  color: var(--teal-dark);
+  margin-bottom: 0.5rem;
+}
+
+.doctor-info .specialty {
+  color: var(--purple-accent);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.doctor-icon {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--purple-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-md);
+}

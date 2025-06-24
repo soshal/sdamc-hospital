@@ -1,46 +1,47 @@
+// components/Services/Services.js
 import React from 'react';
 import './Services.css';
-import { FaClinicMedical, FaProcedures, FaFlask, FaXRay, FaAmbulance, FaPills } from 'react-icons/fa';
+import { FaClinicMedical, FaProcedures, FaFlask, FaXRay, FaAmbulance, FaPills, FaHeartbeat, FaBaby } from 'react-icons/fa';
 
 const Services = () => {
   const services = [
     {
       icon: <FaClinicMedical />,
       title: '24/7 Emergency Care',
-      description: 'Our emergency department is staffed round the clock with experienced professionals.'
+      description: 'Immediate medical attention for critical conditions with specialized emergency team.'
     },
     {
       icon: <FaPills />,
       title: '24/7 Pharmacy',
-      description: 'Get your medications anytime with our 24-hour pharmacy services.'
+      description: 'Round-the-clock access to medications with professional pharmacist guidance.'
     },
     {
-      icon: <FaProcedures />,
+      icon: <FaBaby />,
       title: '24/7 Labour Room',
-      description: 'Dedicated maternity care available at all hours for expecting mothers.'
+      description: 'Comprehensive maternity services with neonatal care specialists available.'
     },
     {
       icon: <FaFlask />,
       title: 'Laboratory Services',
-      description: 'State-of-the-art diagnostic lab with quick and accurate test results.'
+      description: 'Advanced diagnostic testing with quick and accurate results reporting.'
     },
     {
       icon: <FaXRay />,
       title: 'Radio Diagnostics',
-      description: 'Advanced imaging services including X-ray, CT scan, and MRI.'
+      description: 'State-of-the-art imaging including X-ray, CT scan, MRI and ultrasound.'
     },
     {
-      icon: <FaAmbulance />,
-      title: 'Ambulance Services',
-      description: 'Emergency ambulance available for quick patient transport.'
+      icon: <FaHeartbeat />,
+      title: 'Cardiology',
+      description: 'Complete cardiac care with non-invasive and interventional procedures.'
     }
   ];
 
   return (
     <section className="services-section">
       <div className="container">
-        <h2 className="section-title">Our Services</h2>
-        <p className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px' }}>
+        <h2 className="section-title">Our Facilities & Services</h2>
+        <p className="section-subtitle">
           We offer comprehensive healthcare services with state-of-the-art facilities and compassionate care.
         </p>
         
@@ -52,13 +53,15 @@ const Services = () => {
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <a href="/services">Learn More →</a>
+              <a href="/services" className="learn-more">
+                Learn More <span>→</span>
+              </a>
             </div>
           ))}
         </div>
         
-        <div className="text-center" style={{ marginTop: '50px' }}>
-          <a href="/services" className="btn btn-accent">View All Services</a>
+        <div className="text-center">
+          <a href="/services" className="btn btn-purple">View All Services</a>
         </div>
       </div>
     </section>

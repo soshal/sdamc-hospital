@@ -1,68 +1,199 @@
+/* components/About/About.css */
 .about-section {
-  background: var(--light-color);
+  background: var(--light-gray);
+  padding: 6rem 0;
 }
 
-.about-content {
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--teal-dark);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--purple-accent);
+  margin-bottom: 4rem;
+  font-style: italic;
+}
+
+.hospital-overview {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 3rem;
+  margin-bottom: 5rem;
   align-items: center;
 }
 
-.about-image img {
+.hospital-image img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
 }
 
-.about-text h3 {
-  color: var(--primary-color);
-  margin: 20px 0 15px;
-  font-size: 1.8rem;
+.hospital-description {
+  color: var(--dark-gray);
+  line-height: 1.8;
 }
 
-.about-text p {
-  margin-bottom: 20px;
+.hospital-description p {
+  margin-bottom: 1.5rem;
 }
 
-.values {
+.highlight-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 128, 128, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  margin-top: 2rem;
+  color: var(--teal-dark);
+  font-weight: 600;
+}
+
+.highlight-icon {
+  color: var(--purple-accent);
+  font-size: 1.5rem;
+}
+
+.mission-vision {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin: 30px 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.vision-card,
+.mission-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-card {
+  border-top: 4px solid var(--teal-primary);
+}
+
+.mission-card {
+  border-top: 4px solid var(--purple-accent);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: var(--purple-accent);
+}
+
+.vision-card .card-icon {
+  color: var(--teal-primary);
+}
+
+.card-header h3 {
+  margin: 0;
+  color: var(--teal-dark);
+}
+
+.highlight-quote {
+  font-style: italic;
+  color: var(--teal-primary);
+  font-weight: 500;
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--purple-accent);
+}
+
+.values-list {
+  margin-top: 2rem;
 }
 
 .value-item {
-  text-align: center;
-  padding: 20px;
-  background: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
-}
-
-.value-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--teal-dark);
 }
 
 .value-icon {
-  font-size: 2rem;
-  color: var(--accent-color);
-  margin-bottom: 15px;
+  color: var(--purple-accent);
 }
 
-.value-item h4 {
-  color: var(--primary-color);
-  margin-bottom: 10px;
+.stats-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.stats-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  color: var(--teal-dark);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.stat-item {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: var(--purple-accent);
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--teal-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--dark-gray);
+  font-size: 1.1rem;
 }
 
 @media (max-width: 992px) {
-  .about-content {
+  .hospital-overview,
+  .mission-vision {
     grid-template-columns: 1fr;
   }
   
-  .about-image {
-    order: 2;
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-section {
+    padding: 4rem 0;
   }
 }

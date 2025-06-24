@@ -1,18 +1,19 @@
+// components/Contact/Contact.js
 import React from 'react';
 import './Contact.css';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaPaperPlane } from 'react-icons/fa';
 
 const Contact = () => {
   return (
     <section className="contact-section">
       <div className="container">
         <h2 className="section-title">Contact Us</h2>
+        <p className="section-subtitle">
+          We're here to answer your questions and provide the care you need.
+        </p>
         
         <div className="contact-content">
           <div className="contact-info">
-            <h3>Get In Touch</h3>
-            <p>We're here to answer your questions and provide the care you need.</p>
-            
             <div className="info-item">
               <div className="info-icon">
                 <FaMapMarkerAlt />
@@ -29,8 +30,8 @@ const Contact = () => {
               </div>
               <div className="info-text">
                 <h4>Phone</h4>
-                <p>+91 1234567890 (General)</p>
-                <p>+91 9876543210 (Emergency)</p>
+                <p>+91 123 456 7890 (General)</p>
+                <p>+91 987 654 3210 (Emergency)</p>
               </div>
             </div>
             
@@ -58,7 +59,6 @@ const Contact = () => {
           </div>
           
           <div className="contact-form">
-            <h3>Send Us a Message</h3>
             <form>
               <div className="form-group">
                 <input type="text" placeholder="Your Name" required />
@@ -82,7 +82,9 @@ const Contact = () => {
               <div className="form-group">
                 <textarea placeholder="Your Message" rows="5" required></textarea>
               </div>
-              <button type="submit" className="btn btn-accent">Send Message</button>
+              <button type="submit" className="btn btn-purple">
+                <FaPaperPlane /> Send Message
+              </button>
             </form>
           </div>
         </div>
