@@ -197,3 +197,414 @@
     padding: 4rem 0;
   }
 }
+/* components/About/About.css */
+.about-section {
+  background: var(--light-gray);
+  padding: 6rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--teal-dark);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--purple-accent);
+  margin-bottom: 4rem;
+  font-style: italic;
+}
+
+.hospital-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  align-items: center;
+}
+
+.hospital-image img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+.hospital-description {
+  color: var(--dark-gray);
+  line-height: 1.8;
+}
+
+.hospital-description p {
+  margin-bottom: 1.5rem;
+}
+
+.highlight-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 128, 128, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  margin-top: 2rem;
+  color: var(--teal-dark);
+  font-weight: 600;
+}
+
+.highlight-icon {
+  color: var(--purple-accent);
+  font-size: 1.5rem;
+}
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.vision-card,
+.mission-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-card {
+  border-top: 4px solid var(--teal-primary);
+}
+
+.mission-card {
+  border-top: 4px solid var(--purple-accent);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: var(--purple-accent);
+}
+
+.vision-card .card-icon {
+  color: var(--teal-primary);
+}
+
+.card-header h3 {
+  margin: 0;
+  color: var(--teal-dark);
+}
+
+.highlight-quote {
+  font-style: italic;
+  color: var(--teal-primary);
+  font-weight: 500;
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--purple-accent);
+}
+
+.values-list {
+  margin-top: 2rem;
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--teal-dark);
+}
+
+.value-icon {
+  color: var(--purple-accent);
+}
+
+.stats-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.stats-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  color: var(--teal-dark);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.stat-item {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: var(--purple-accent);
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--teal-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--dark-gray);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .hospital-overview,
+  .mission-vision {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-section {
+    padding: 4rem 0;
+  }
+}
+/* components/About/About.css */
+.about-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--purple-accent);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.commitments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.commitment-card {
+  background: var(--light-gray);
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.commitment-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--purple-accent);
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background: rgba(128, 0, 128, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.commitment-card:hover .card-icon {
+  background: var(--purple-accent);
+  color: var(--white);
+  transform: rotateY(180deg);
+}
+
+.commitment-card h3 {
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.commitment-card p {
+  color: var(--dark-gray);
+  line-height: 1.7;
+}
+
+.expertise-section {
+  text-align: center;
+}
+
+.expertise-section h3 {
+  font-size: 2rem;
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+}
+
+.expertise-description {
+  color: var(--dark-gray);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+.department-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.department-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-top: 3px solid var(--teal-primary);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.department-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--teal-primary), var(--purple-accent));
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.department-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  color: var(--white);
+}
+
+.department-card:hover::before {
+  opacity: 1;
+}
+
+.department-card:hover h4,
+.department-card:hover p {
+  color: var(--white);
+}
+
+.department-card h4 {
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.department-card p {
+  color: var(--dark-gray);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--purple-accent);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.department-card:hover .learn-more {
+  color: var(--white);
+}
+
+.learn-more svg {
+  transition: transform 0.3s ease;
+}
+
+.learn-more:hover svg {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}

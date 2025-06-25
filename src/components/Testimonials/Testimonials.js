@@ -1,51 +1,62 @@
 // components/Testimonials/Testimonials.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Testimonials.css';
-import testimonial1 from '../../assets/pexels-pixabay-139398.jpg';
-import testimonial2 from '../../assets/pexels-pixabay-139398.jpg';
-import testimonial3 from '../../assets/pexels-pixabay-40568.jpg';
-import { FaQuoteLeft, FaPlay } from 'react-icons/fa';
+import testimonialBg from '../../assets/pexels-pixabay-236380.jpg';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const Testimonials = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const parallax = document.querySelector('.testimonial-parallax');
+      if (parallax) {
+        const scrollPosition = window.pageYOffset;
+        parallax.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const testimonials = [
     {
-      image: testimonial1,
-      name: 'Rajesh Kumar',
-      role: 'Patient',
-      quote: 'The care I received at SDAMC was exceptional. The doctors took time to listen and explain everything clearly.'
+      name: "Anita J.",
+      role: "Cardiology Patient",
+      quote: "The doctors at SDAMC treated me with care and kindness. I felt God's presence throughout my recovery."
     },
     {
-      image: testimonial2,
-      name: 'Priya Sharma',
-      role: 'Patient',
-      quote: 'The spiritual atmosphere combined with excellent medical care made my recovery peaceful and complete.'
+      name: "Robert K.",
+      role: "Neurology Patient",
+      quote: "Exceptional care from skilled professionals who truly understand holistic healing."
     },
     {
-      image: testimonial3,
-      name: 'Dr. Amit Patel',
-      role: 'Referring Physician',
-      quote: 'I confidently refer my patients to SDAMC knowing they will receive compassionate, high-quality care.'
+      name: "Priya M.",
+      role: "Maternity Patient",
+      quote: "The compassionate care during my delivery made it a blessed experience for our family."
     }
   ];
 
   return (
     <section className="testimonials-section">
-      <div className="container">
-        <h2 className="section-title">Patient Experiences</h2>
-        <p className="section-subtitle">
-          Hear what our patients and partners say about their experiences with us.
-        </p>
-        
-        <div className="testimonials-content">
+      <div className="testimonial-parallax">
+        <img src={testimonialBg} alt="Testimonial background" />
+      </div>
+      
+      <div className="testimonial-overlay">
+        <div className="container">
+          <div className="section-header">
+            <h2>Patient Experiences</h2>
+            <p className="section-subtitle">
+              Hear what our patients say about their experiences with us
+            </p>
+          </div>
+          
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
               <div className="testimonial-card" key={index}>
-                <div className="quote-icon">
-                  <FaQuoteLeft />
-                </div>
+                <FaQuoteLeft className="quote-icon" />
                 <p className="quote">"{testimonial.quote}"</p>
                 <div className="testimonial-author">
-                  <img src={testimonial.image} alt={testimonial.name} className="author-image" />
                   <div className="author-info">
                     <h4>{testimonial.name}</h4>
                     <p>{testimonial.role}</p>
@@ -53,23 +64,6 @@ const Testimonials = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <div className="video-testimonials">
-            <h3>Video Testimonials</h3>
-            <div className="video-grid">
-              <div className="video-thumbnail">
-                <div className="play-overlay">
-                  <FaPlay />
-                </div>
-              </div>
-              <div className="video-thumbnail">
-                <div className="play-overlay">
-                  <FaPlay />
-                </div>
-              </div>
-            </div>
-            <a href="/testimonials" className="btn btn-teal">View More Videos</a>
           </div>
         </div>
       </div>
